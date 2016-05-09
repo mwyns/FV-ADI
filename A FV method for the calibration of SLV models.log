@@ -1,0 +1,418 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.11.20)  9 MAY 2016 09:45
+entering extended mode
+**A*FV*method*for*the*calibration*of*SLV*models.tex
+
+("C:\Users\WynsMaarten\Documents\PhD\Mijn Artikels\A FV method for the calibrat
+ion of SLV models\Draft\V2\A FV method for the calibration of SLV models.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count88
+\float@exts=\toks15
+\float@box=\box26
+\@float@everytoks=\toks16
+\@floatcapt=\box27
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\latexsym.sty"
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks17
+\ex@=\dimen105
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen106
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count89
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count90
+\leftroot@=\count91
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count92
+\DOTSCASE@=\count93
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen107
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count94
+\c@MaxMatrixCols=\count95
+\dotsspace@=\muskip10
+\c@parentequation=\count96
+\dspbrk@lvl=\count97
+\tag@help=\toks18
+\row@=\count98
+\column@=\count99
+\maxfields@=\count100
+\andhelp@=\toks19
+\eqnshift@=\dimen108
+\alignsep@=\dimen109
+\tagshift@=\dimen110
+\tagwidth@=\dimen111
+\totwidth@=\dimen112
+\lineht@=\dimen113
+\@envbody=\toks20
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+(C:\Users\WynsMaarten\AppData\Roaming\MiKTeX\2.9\tex\latex\subeqnarray\subeqnar
+ray.sty
+Package: subeqnarray 2004/04/15 v2.1c subeqnarray package
+\c@subequation=\count101
+) ("C:\Program Files\MiKTeX 2.9\tex\generic\dvips\colordvi.sty")
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
+Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+))
+(C:\Users\WynsMaarten\AppData\Roaming\MiKTeX\2.9\tex\latex\bbm\bbm.sty
+Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
+LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
+(Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
+(Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks22
+\inpenc@posthook=\toks23
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+))
+(C:\Users\WynsMaarten\AppData\Roaming\MiKTeX\2.9\tex\latex\a4wide\a4wide.sty
+Package: a4wide 1994/08/30
+
+(C:\Users\WynsMaarten\AppData\Roaming\MiKTeX\2.9\tex\latex\ntgclass\a4.sty
+Package: a4 2004/04/15 v1.2g A4 based page layout
+))
+\c@theorem=\count102
+
+("C:\Users\WynsMaarten\Documents\PhD\Mijn Artikels\A FV method for the calibrat
+ion of SLV models\Draft\V2\A FV method for the calibration of SLV models.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+
+(C:\Users\WynsMaarten\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count103
+\scratchdimen=\dimen114
+\scratchbox=\box30
+\nofMPsegments=\count104
+\nofMParguments=\count105
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count106
+\MPscratchDim=\dimen115
+\MPnumerator=\count107
+\makeMPintoPDFobject=\count108
+\everyMPtoPDFconversion=\toks25
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 33.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ulasy.fd"
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 33.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 33.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Underfull \hbox (badness 4024) in paragraph at lines 33--33
+[][]\OT1/cmr/m/n/8 Numerical Al-go-rithms Group, Ox-ford Street, Manch-ester, M
+1 5AN, United King-dom. []:
+ []
+
+[1
+
+{C:/Users/WynsMaarten/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+[2] [3] [4] [5]
+Package epstopdf Info: Source file: <Grid1D.eps>
+(epstopdf)                    date: 2016-03-30 10:18:57
+(epstopdf)                    size: 18119 bytes
+(epstopdf)             Output file: <Grid1D-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-03-30 10:19:13
+(epstopdf)                    size: 3570 bytes
+(epstopdf)             Command: <epstopdf --outfile=Grid1D-eps-converted-to.pdf
+ Grid1D.eps>
+(epstopdf)             \includegraphics on input line 259.
+Package epstopdf Info: Output file is already uptodate.
+ <Grid1D-eps-converted-to.pdf, id=38, 421.575pt x 60.225pt>
+File: Grid1D-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Grid1D-eps-converted-to.pdf>
+Package pdftex.def Info: Grid1D-eps-converted-to.pdf used on input line 259.
+(pdftex.def)             Requested size: 210.78697pt x 30.11241pt.
+Package epstopdf Info: Source file: <Convergence1D.eps>
+(epstopdf)                    date: 2016-03-30 09:50:37
+(epstopdf)                    size: 22723 bytes
+(epstopdf)             Output file: <Convergence1D-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-03-30 11:00:37
+(epstopdf)                    size: 4406 bytes
+(epstopdf)             Command: <epstopdf --outfile=Convergence1D-eps-converted
+-to.pdf Convergence1D.eps>
+(epstopdf)             \includegraphics on input line 270.
+Package epstopdf Info: Output file is already uptodate.
+
+<Convergence1D-eps-converted-to.pdf, id=39, 421.575pt x 316.18124pt>
+File: Convergence1D-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Convergence1D-eps-converted-to.pdf>
+Package pdftex.def Info: Convergence1D-eps-converted-to.pdf used on input line 
+270.
+(pdftex.def)             Requested size: 210.78697pt x 158.09023pt.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 286.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 286.
+ [6 <C:/Users/WynsMaarten/Documents/PhD/Mijn Artikels/A FV method for the calib
+ration of SLV models/Draft/V2/Grid1D-eps-converted-to.pdf>] [7 <C:/Users/WynsMa
+arten/Documents/PhD/Mijn Artikels/A FV method for the calibration of SLV models
+/Draft/V2/Convergence1D-eps-converted-to.pdf>]
+Overfull \hbox (2.25977pt too wide) detected at line 342
+\OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ; P\OT1/cmr/m/n/10 (\OML
+/cmm/m/it/10 \OT1/cmr/m/n/10 )) = \OML/cmm/m/it/10 [][][];
+ []
+
+[8] [9]
+Overfull \hbox (35.88492pt too wide) detected at line 403
+\OML/cmm/m/it/10 [][][][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 \OT1/cmr/m/n/10 )
+ = \OML/cmm/m/it/10 [][][][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 \OT1/cmr/m/n/1
+0 ) = \OML/cmm/m/it/10 [][][][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 \OT1/cmr/m/
+n/10 ) = \OML/cmm/m/it/10 [][][][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 \OT1/cmr
+/m/n/10 ) = 0\OML/cmm/m/it/10 ;
+ []
+
+[10]
+Package epstopdf Info: Source file: <Grid2DBS.eps>
+(epstopdf)                    date: 2016-03-30 14:00:04
+(epstopdf)                    size: 65444 bytes
+(epstopdf)             Output file: <Grid2DBS-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-03-30 14:03:50
+(epstopdf)                    size: 3880 bytes
+(epstopdf)             Command: <epstopdf --outfile=Grid2DBS-eps-converted-to.p
+df Grid2DBS.eps>
+(epstopdf)             \includegraphics on input line 463.
+Package epstopdf Info: Output file is already uptodate.
+ <Grid2DBS-eps-converted-to.pdf, id=64, 421.575pt x 316.18124pt>
+File: Grid2DBS-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Grid2DBS-eps-converted-to.pdf>
+Package pdftex.def Info: Grid2DBS-eps-converted-to.pdf used on input line 463.
+(pdftex.def)             Requested size: 210.78697pt x 158.09023pt.
+Package epstopdf Info: Source file: <Convergence2DBS.eps>
+(epstopdf)                    date: 2016-03-30 14:16:16
+(epstopdf)                    size: 22725 bytes
+(epstopdf)             Output file: <Convergence2DBS-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-03-30 14:20:53
+(epstopdf)                    size: 4416 bytes
+(epstopdf)             Command: <epstopdf --outfile=Convergence2DBS-eps-convert
+ed-to.pdf Convergence2DBS.eps>
+(epstopdf)             \includegraphics on input line 474.
+Package epstopdf Info: Output file is already uptodate.
+
+<Convergence2DBS-eps-converted-to.pdf, id=65, 421.575pt x 316.18124pt>
+File: Convergence2DBS-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Convergence2DBS-eps-converted-to.pdf>
+Package pdftex.def Info: Convergence2DBS-eps-converted-to.pdf used on input lin
+e 474.
+(pdftex.def)             Requested size: 210.78697pt x 158.09023pt.
+
+Overfull \hbox (0.41158pt too wide) in paragraph at lines 493--493
+[]\OT1/cmr/bx/n/14.4 Temporal dis-cretiza-tion by Al-ter-nat-ing Di-rec-tion Im
+-plicit
+ []
+
+[11] [12 <C:/Users/WynsMaarten/Documents/PhD/Mijn Artikels/A FV method for the 
+calibration of SLV models/Draft/V2/Grid2DBS-eps-converted-to.pdf> <C:/Users/Wyn
+sMaarten/Documents/PhD/Mijn Artikels/A FV method for the calibration of SLV mod
+els/Draft/V2/Convergence2DBS-eps-converted-to.pdf>] [13] [14] [15]
+("C:\Users\WynsMaarten\Documents\PhD\Mijn Artikels\A FV method for the calibrat
+ion of SLV models\Draft\V2\A FV method for the calibration of SLV models.aux") 
+) 
+Here is how much of TeX's memory you used:
+ 2863 strings out of 493921
+ 39233 string characters out of 3147263
+ 104767 words of memory out of 3000000
+ 6070 multiletter control sequences out of 15000+200000
+ 16116 words of font info for 65 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 42i,13n,24p,944b,295s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib
+10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmmib7.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
+y10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/symbols/msbm10.pfb>
+Output written on "A FV method for the calibration of SLV models.pdf" (15 pages
+, 366147 bytes).
+PDF statistics:
+ 167 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+
