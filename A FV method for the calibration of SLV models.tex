@@ -124,25 +124,26 @@ Standard one-dimensional forward Kolmogorov equations are also not written in co
 \label{eq:GeneralForward1D}
 \end{equation} 
 for $x\in \R$, $\tau >0$, where $\sigma, \mu$ are real functions of $x$, with $\sigma$ non-negative and with initial function given by $p(x,0) = \delta(x-X_{0})$ for some real $X_{0}$.
-Spatial discretization by finite difference (FD) or FV methods is often applied on a finite Cartesian grid. By consequence, the spatial domain has to be truncated to $[X_{\min}, X_{\max}]$, where the boundaries are chosen sufficiently far away from $X_{0}$ such that the truncation error is negligible. 
+Spatial discretization by finite difference (FD) or FV methods is often applied on a finite Cartesian grid. By consequence, the spatial domain has to be truncated to $[x_{\min}, x_{\max}]$, where the boundaries are chosen sufficiently far away from $X_{0}$ such that the truncation error is negligible. 
 Recall that the form of $\sigma, \mu$ can naturally restrict the spatial domain of the PDE to for example $x \ge 0$. 
-In the latter case, the lower boundary is naturally defined as $X_{\min}=0$. 
-Next, let $X_{\min} = x_{1} < x_{2} < \ldots < x_{m_{1}} = X_{\max}$ be spatial mesh points and define spatial mesh widths
+In the latter case, the lower boundary is naturally defined as $x_{\min}=0$. 
+Next, let $x_{\min} = x_{1} < x_{2} < \ldots < x_{m_{1}} = x_{\max}$ be spatial mesh points and define spatial mesh widths
 $$ \Delta x_{i} = x_{i} - x_{i-1}, \qquad \mathrm{for} \ 2 \le i \le m_{1},$$
 and $\Delta x_{1} = \Delta x_{m_{1}+1} = 0$.
-Spatial discretization then leads to approximations $P_{i}(\tau)$ of $p(x_{i},\tau)$. The idea of FV methods with mass conservation consists of creating a spatial discretization such that 
-\begin{equation}
-\sum_{i=1}^{m_{1}} P_{i}(\tau) \frac{\Delta x_{i} + \Delta x_{i+1}}{2} = \mathrm{constant,} \qquad \mathrm{for} \ \tau \ge 0.
-\label{eq:ConservationMass1D}
-\end{equation}
-%where $\Delta x_{i} = x_{i} - x_{i-1}$ and $\Delta x_{1} = \Delta x_{m_{1}+1} = 0$.
 Denote by $\Omega_{i}$ the cell
 \begin{equation}
 \Omega_{i} = [x_{i} - 0.5\Delta x_{i}, x_{i} + 0.5\Delta x_{i+1}],
 \end{equation}
-and denote by $x_{i \mp 0.5}$ the boundaries of this cell. In particular $x_{0.5}=x_{1}=X_{\min}$ and $x_{m_{1}+0.5}=x_{m_{1}}=X_{\max}$. Next, denote by $\overline{p}(x_{i},\tau)$ the cell average
-$$ \frac{2}{\Delta x_{i} + \Delta x_{i+1}} \int_{\Omega_{i}} p(x,\tau) dx, $$
-which is also a second-order approximation of the point value $p(x_{i},\tau)$. For this cell averages it holds that
+and denote by $x_{i \mp 0.5}$ the boundaries of this cell. In particular $x_{0.5}=x_{1}=x_{\min}$ and $x_{m_{1}+0.5}=x_{m_{1}}=x_{\max}$.
+Spatial discretization by FV methods then leads to approximations $P_{i}(\tau)$ of the cell averages
+$$\overline{p}(x_{i},\tau) = \frac{2}{\Delta x_{i} + \Delta x_{i+1}} \int_{\Omega_{i}} p(x,\tau) dx, $$
+which also form second-order approximations of the point values $p(x_{i},\tau)$.
+The idea of FV methods with mass conservation consists of creating a spatial discretization such that 
+\begin{equation}
+\sum_{i=1}^{m_{1}} P_{i}(\tau) \frac{\Delta x_{i} + \Delta x_{i+1}}{2} = \mathrm{constant,} \qquad \mathrm{for} \ \tau \ge 0.
+\label{eq:ConservationMass1D}
+\end{equation}
+For the cell averages $\overline{p}(x_{i},\tau)$, it is readily seen that
 \begin{subeqnarray}
 \frac{\Delta x_{i} + \Delta x_{i+1}}{2} \frac{\partial}{\partial \tau }\overline{p}(x_{i},\tau) &=& \left. \left[ - \frac{\partial}{\partial x} \left( \frac{1}{2} \sigma^{2} p \right) + \mu p \right] \right\vert_{x=x_{i-0.5}} \slabel{eq:FluxLeft} \\
 && - \ \left. \left[ - \frac{\partial}{\partial x} \left( \frac{1}{2} \sigma^{2} p \right) + \mu p \right] \right\vert_{x=x_{i+0.5}}. \slabel{eq:FluxRight}
@@ -157,7 +158,7 @@ P_{i}'(\tau) = \left[ f_{i-0.5}(\tau,P(\tau)) - f_{i+0.5}(\tau,P(\tau)) \right] 
 \end{equation}
 where $P(\tau)$ is the vector containing all the approximations $P_{i}(\tau)$.
 The $f_{i \pm 0.5}(\tau,P(\tau))$ are discretizations of the fluxes from \eqref{eq:Fluxes}.
-Note that $f_{0.5}$, respectively $f_{m_{1}+0.5}$, corresponds with the flux at the boundary $X_{\min}=x_{1}$, respectively $X_{\max} = x_{m_{1}}$. Moreover, by performing a discretization of the form \eqref{eq:GeneralDiscretization1D} and by ignoring the boundary terms, conservation of mass is achieved naturally inside the computational domain. 
+Note that $f_{0.5}$, respectively $f_{m_{1}+0.5}$, corresponds with the flux at the boundary $x_{\min}=x_{1}$, respectively $x_{\max} = x_{m_{1}}$. Moreover, by performing a discretization of the form \eqref{eq:GeneralDiscretization1D} and by ignoring the boundary terms, conservation of mass is achieved naturally inside the computational domain. 
 
 The convection part of the PDE \eqref{eq:GeneralForward1D} is written in conservative form. For the inner cell boundaries, i.e.\ for $x_{i-0.5}$ with $2 \le i \le m_{1}$, we consider the second-order central FV scheme, cf.\ \cite{HV03}, and define
 \begin{equation}
@@ -191,16 +192,16 @@ $$ \int_{-\infty}^{\infty} p(,x,\tau) dx = 1, \qquad \forall \tau > 0,$$
 and hence
 $$ \int_{-\infty}^{\infty} \left[ \tfrac{\partial}{\partial \tau} p \right] dx = \int_{-\infty}^{\infty} \left[ \tfrac{1}{2} \tfrac{\partial^{2}}{\partial x^{2}} \left( \sigma^{2}p \right) - \tfrac{\partial}{\partial x} \left( \mu p \right) \right] dx = 0. $$
 This condition makes sure that the total mass of the density function remains constant during the process. 
-Assuming that $[X_{\min},X_{\max}]$ is chosen sufficiently wide, the condition above can be approximated by
-$$ \left. \left[ \tfrac{\partial}{\partial x} \left( \tfrac{1}{2} \sigma^{2}p \right) - \left( \mu p \right) \right]\right\vert^{x= X_{\max}}_{x=X_{\min}} = 0. $$
-This reflects that the total flux over the entire interval $[X_{\min},X_{\max}]$ is zero. 
-As stated above, for some choices of coefficient functions the spatial domain is naturally restricted. For example, if the PDE \eqref{eq:GeneralForward1D} is stemming from a non-negative process, $X_{\min}$ can be set equal to zero. The no-flux boundary condition above then still holds on the naturally restricted domain.
+Assuming that $[x_{\min},x_{\max}]$ is chosen sufficiently wide, the condition above can be approximated by
+$$ \left. \left[ \tfrac{\partial}{\partial x} \left( \tfrac{1}{2} \sigma^{2}p \right) - \left( \mu p \right) \right]\right\vert^{x= x_{\max}}_{x=x_{\min}} = 0. $$
+This reflects that the total flux over the entire interval $[x_{\min},x_{\max}]$ is zero. 
+As stated above, for some choices of coefficient functions the spatial domain is naturally restricted. For example, if the PDE \eqref{eq:GeneralForward1D} is stemming from a non-negative process, $x_{\min}$ can be set equal to zero. The no-flux boundary condition above then still holds on the naturally restricted domain.
 
 Theoretically it could be the case that there is a positive flux at one of the boundaries, and exactly the same negative flux at the other boundary. 
 However, since the solution represents a density function, it is more realistic to impose that no mass is coming in or going out at each of the boundaries. It is assumed that the following boundary conditions hold
 \begin{eqnarray*}
-\left. \left[ \tfrac{\partial}{\partial x} \left( \tfrac{1}{2} \sigma^{2}p \right) - \left( \mu p \right) \right]\right\vert_{x=X_{\min}} &=& 0, \\\\
-\left. \left[ \tfrac{\partial}{\partial x} \left( \tfrac{1}{2} \sigma^{2}p \right) - \left( \mu p \right) \right]\right\vert_{x=X_{\max}} &=& 0.
+\left. \left[ \tfrac{\partial}{\partial x} \left( \tfrac{1}{2} \sigma^{2}p \right) - \left( \mu p \right) \right]\right\vert_{x=x_{\min}} &=& 0, \\\\
+\left. \left[ \tfrac{\partial}{\partial x} \left( \tfrac{1}{2} \sigma^{2}p \right) - \left( \mu p \right) \right]\right\vert_{x=x_{\max}} &=& 0.
 \end{eqnarray*}
 To implement the first condition, a ghost point $x_{0}=x_{1}-\Delta x_{2}$ is introduced.
 The corresponding value $P_{0}(\tau)$ can be defined by making use of extrapolation and the boundary condition above in the following way
@@ -208,17 +209,17 @@ The corresponding value $P_{0}(\tau)$ can be defined by making use of extrapolat
 \frac{1}{2} \sigma_{0}^{2} P_{0}(\tau) = \frac{1}{2} \sigma_{2}^{2} P_{2}(\tau) - 2 \mu_{1} P_{1}(\tau) \Delta x_{2}.
 \label{eq:ExtrapolBoundary}
 \end{equation}
-For the discretization of the flux at $x_{0.5}=x_{1}=X_{\min}$ stemming from the diffusion part we use this approximation and define
+For the discretization of the flux at $x_{0.5}=x_{1}=x_{\min}$ stemming from the diffusion part we use this approximation and define
 $$ f_{d,0.5}(\tau,P(\tau)) = -\left(\tfrac{1}{2} \sigma^{2}_{2} P_{2}(\tau) - \tfrac{1}{2} \sigma^{2}_{0} P_{0}(\tau)\right) \frac{1}{2\Delta x_{2}} = -\mu_{1}P_{1}. $$
 Note that if the approximations in the middle formula are replaced by their exact values $p(x_{0},\tau)$, $p(x_{2},\tau)$, then this formula yields a second-order approximation of $-\tfrac{\partial}{\partial x} \left( \tfrac{1}{2} \sigma^{2}p \right) \vert_{x=x_{1}}$.
-Since the grid point $x_{1}$ coincides with the left boundary of the first cell, the flux on the boundary $X_{\min}$ stemming from the convection part can be approximated directly by using the approximation $P_{1}$,
+Since the grid point $x_{1}$ coincides with the left boundary of the first cell, the flux on the boundary $x_{\min}$ stemming from the convection part can be approximated directly by using the approximation $P_{1}$,
 $$ f_{a,0.5}(\tau,P(\tau)) = \mu_{1} P_{1}. $$
-The total flux at the boundary $X_{\min}$ is then approximated by 
+The total flux at the boundary $x_{\min}$ is then approximated by 
 $$ f_{0.5}(\tau,P(\tau)) = f_{d,0.5}(\tau,P(\tau)) + f_{a,0.5}(\tau,P(\tau))=0, $$
 which is the semidiscrete equivalent of stating that no mass is coming in or going out at the boundary.
 One ends up with the discretization
 $$ P_{1}'(\tau) = -f_{1.5}(\tau,P(\tau))\frac{2}{\Delta x_{1} + \Delta x_{2}} = -f_{1.5}(\tau,P(\tau))\frac{2}{\Delta x_{2}}. $$
-The boundary condition at $X_{\max}$ can be handled analogously in order to get
+The boundary condition at $x_{\max}$ can be handled analogously in order to get
 $$ P_{M_{1}}'(\tau) = f_{m_{1}-0.5}(\tau,P(\tau)) \frac{2}{\Delta x_{m_{1}}}. $$ 
 By performing the discretization of the boundary conditions in this way, it follows that \eqref{eq:ConservationMass1D} is fulfilled, i.e.\ the total numerical mass is kept constant. 
 
@@ -228,7 +229,7 @@ P'(\tau) = A P(\tau)
 \label{eq:ODE1D}
 \end{equation} 
 for $\tau > 0$, with given matrix $A$. 
-Since the values $P_{i}(\tau)$ can be seen as approximations of the cell averages $\overline{p}(x_{i},\tau)$, it is natural to define the initial vector $P(0)$ as 
+Since the values $P_{i}(\tau)$ are approximations of the cell averages $\overline{p}(x_{i},\tau)$, it is natural to define the initial vector $P(0)$ as 
 $$ P_{i}(0) = \left\{ \begin{array}{lll}
 \tfrac{2}{\Delta x_{i} + \Delta x_{i+1}} & & \mathrm{if} \ X_{0} \in [x_{i-0.5}, \ x_{i+0.5}], \\\\
 0 && \mathrm{else.}
@@ -241,14 +242,15 @@ In general, the exact solution of the system of ODEs \eqref{eq:ODE1D} can not be
 
 In this subsection the performance of the FV discretization is tested by applying it to a practical example. Consider the SDE \eqref{eq:LVmodelS} with a constant local volatility function $\sigma_{LV} = \sigma_{BS} > 0$ such that the model reduces to the classical Black--Scholes model. Then, the underlying density is known exactly and given by
 \begin{equation}
-p(s,\tau) = n(\log(s/S_{0}),\tau)\frac{1}{s}, \qquad \mathrm{for} \ s>0, \tau > 0,
+p(s,\tau) = \frac{1}{\sigma_{BS}\sqrt{\tau}}\phi\left(\frac{\log(s/S_{0})-(r_{d}-r_{f}-\tfrac{1}{2}\sigma^{2}_{BS})\tau}{\sigma_{BS}\sqrt{\tau}}\right)\frac{1}{s}, \qquad \mathrm{for} \ s>0, \tau > 0,
 \label{eq:DensityBS}
 \end{equation}
-where $n(x,\tau)$ is the density function of a normally distributed random variable with mean $(r_{d}-r_{f}-\tfrac{1}{2}\sigma_{BS}^{2})\tau$ and variance $\sigma_{BS}^{2}\tau$. The density function $p(s,\tau)$ from \eqref{eq:DensityBS} satisfies the PDE
+where $\phi(x)$ is the density function of a standard normally distributed random variable.
+The density function $p(s,\tau)$ from \eqref{eq:DensityBS} satisfies the PDE
 $$ \tfrac{\partial}{\partial \tau} p = \tfrac{\partial^{2}}{\partial s^{2}} \left( \tfrac{1}{2} \sigma_{BS}^{2}s^{2}p \right) - \tfrac{\partial}{\partial s} \left( (r_{d} - r_{f})s p \right), $$
 for $s, \tau > 0$, with $p(s,0)=\delta(s-S_{0})$. This PDE is of the form \eqref{eq:GeneralForward1D} with a natural restriction of the spatial domain. Note that for the numerical experiment we don't apply the $\log$-transformation from Section \ref{intro} in order to have non-constant coefficients which makes the problem more challenging.
 
-Firstly, the spatial domain is truncated to $[S_{\min}, S_{\max}] = [0, 30S_{0}]$ and we define a non-uniform grid $s_{1} < s_{2} < \cdots < s_{m_{1}}$ by making use of a $\sinh$ transformation of a uniform underlying grid, cf. \cite{IHF10}. In Figure \ref{fig:Grid1D} the spatial grid is shown for the values $S_{0}=100, m_{1} = 40$ and from $s=0$ to $s=5S_{0}$ to illustrate the smaller mesh widths around the point $s=S_{0}$.
+Firstly, the spatial domain is truncated to $[s_{\min}, s_{\max}] = [0, 30S_{0}]$ and we define a non-uniform grid $s_{1} < s_{2} < \cdots < s_{m_{1}}$ by making use of a $\sinh$ transformation of a uniform underlying grid, cf. \cite{IHF10}. In Figure \ref{fig:Grid1D} the spatial grid is shown for the values $S_{0}=100, m_{1} = 40$ and from $s=0$ to $s=5S_{0}$ to illustrate the smaller mesh widths around the point $s=S_{0}$.
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.5]{Grid1D.eps}  
@@ -272,38 +274,43 @@ The convergence plot clearly indicates that the FV discretization is second-orde
 
 \subsection{Two-Dimensional forward Kolmogorov equations} \label{2DKolmogorov}
 
-In this subsection, the FV discretization from the one-dimensional case is used to define a spatial discretization for the general two-dimensional forward Kolmogorov equation \eqref{eq:GeneralForward}. Suppose the spatial domain is truncated to $[X_{\min}, X_{\max}] \times [Y_{\min}, Y_{\max}]$, the spatial grid points in the $x$-direction, respectively $y$-direction, are given by
-$$X_{\min} = x_{1} < x_{2} < \ldots < x_{m_{1}} = X_{\max},$$
+In this subsection, the FV discretization from the one-dimensional case is used to define a spatial discretization for the general two-dimensional forward Kolmogorov equation \eqref{eq:GeneralForward}. 
+For the ease of presentation, denote by
+$$ \sigma_{12} = \rho \sigma_{1} \sigma_{2}, $$
+the coefficient function corresponding with the mixed spatial derivative term.
+Suppose the spatial domain is truncated to $[x_{\min}, x_{\max}] \times [y_{\min}, y_{\max}]$, the spatial grid points in the $x$-direction, respectively $y$-direction, are given by
+$$x_{\min} = x_{1} < x_{2} < \ldots < x_{m_{1}} = x_{\max},$$
 respectively
-$$Y_{\min} = y_{1} < y_{2} < \ldots < y_{m_{2}} = Y_{\max}.$$
-Next, define spatial mesh widths $\Delta x_{i} = x_{i}-x_{i-1}$ and $\Delta y_{j} = y_{j}-y_{j-1}$ with $\Delta x_{1} = \Delta x_{m_{1}+1} = \Delta y_{1} = \Delta y_{m_{2}+1} = 0$.
-Semidiscretization then leads to approximations $P_{i,j}(\tau)$ of $p(x_{i},y_{j},\tau)$.
-Denote by $\boldsymbol{P}(\tau)$ the $m_{1} \times m_{2}$ matrix with entries $P_{i,j}(\tau)$ and let 
-$$P(\tau) = \mathrm{vec}[\boldsymbol{P}(\tau)],$$ 
-where $\mathrm{vec}[\cdot]$ denotes the operator that turns any given matrix into a vector by putting its successive columns below each other.
+$$y_{\min} = y_{1} < y_{2} < \ldots < y_{m_{2}} = y_{\max}.$$
+Next, define spatial mesh widths $\Delta x_{i} = x_{i}-x_{i-1}$ and $\Delta y_{j} = y_{j}-y_{j-1}$ with $\Delta x_{1} = \Delta x_{m_{1}+1} = \Delta y_{1} = \Delta y_{m_{2}+1} = 0$,
+and denote by $\Omega_{i,j}$ the volumes 
+$$ \Omega_{i,j} := [x_{i-0.5}, x_{i+0.5}] \times [y_{j-0.5}, y_{j+0.5}], $$
+where $x_{i \mp 0.5}$, respectively $y_{j \mp 0.5}$, are defined analogously as in the one-dimensional case.
+Semidiscretization by FV methods then leads to approximations $\boldsymbol{P}_{i,j}(\tau)$ of the volume averages 
+$$ \overline{p}(x_{i},y_{j},\tau) = \frac{1}{\vert \Omega_{i,j} \vert} \int_{\Omega_{i,j}} p(x,y,\tau) dx dy, $$
+where $\vert \Omega_{i,j} \vert$ denotes the area of the volume $\Omega_{i,j}$.
+It is readily seen that the volume averages form a second-order approximation to the point values $p(x_{i},y_{j},\tau)$.
 Analogously to the one-dimensional case, the solution of a two-dimensional forward Kolmogorov equation represents a density function and it is useful to keep the total numerical mass constant, i.e.\ to have
 \begin{equation} 
 \sum_{i=1}^{m_{1}} \sum_{j=1}^{m_{2}} \boldsymbol{P}_{i,j}(\tau) \frac{\Delta x_{i} + \Delta x_{i+1}}{2}\frac{\Delta y_{j} + \Delta y_{j+1}}{2}=\mathrm{constant,} \qquad \mathrm{for} \ \tau \ge 0. 
 \label{eq:ConservationMass2D}
 \end{equation}
-Note that the weights corresponding with the point $(x,y)=(x_{i},y_{j})$ are equal to the area of the volumes
-$$ \Omega_{i,j} := [x_{i-0.5}, x_{i+0.5}] \times [y_{j-0.5}, y_{j+0.5}], $$
-where $x_{i \mp 0.5}$, respectively $y_{j \mp 0.5}$, are defined analogously as in the one-dimensional case.
-Denote by $\vert \Omega_{i,j} \vert$ the area of the corresponding volume and by $\overline{p}(x_{i},y_{j},\tau)$ the volume average
-$$ \frac{1}{\vert \Omega_{i,j} \vert} \int_{\Omega_{i,j}} p(x,y,\tau) dx dy, $$
-which forms again a second-order approximation of the point value $p(x_{i},y_{j},\tau)$. It is readily verified that
+For the volume averages, it is readily verified that
 \begin{subeqnarray}
 \vert \Omega_{i,j} \vert \frac{\partial}{\partial \tau} \overline{p}(x_{i},y_{j},\tau) &=& \int_{y_{j-0.5}}^{y_{j+0.5}} \left. \left[ \frac{\partial}{\partial x} \left( \frac{1}{2} \sigma_{1}^{2} p \right) - \mu_{1}p \right] \right\vert_{x=x_{i-0.5}}^{x=x_{i+0.5}} dy \\
 && + \ \int_{x_{i-0.5}}^{x_{i+0.5}} \left. \left[ \frac{\partial}{\partial y} \left( \frac{1}{2} \sigma_{2}^{2} p \right) - \mu_{2}p \right] \right\vert_{y=y_{j-0.5}}^{y=y_{j+0.5}} dx \\
-&& + \ \left. \left[ \left. \left[ \sigma_{1}\sigma_{2} p \right] \right\vert_{x=x_{i-0.5}}^{x=x_{i+0.5}} \right] \right\vert_{y=y_{j-0.5}}^{y=y_{j+0.5}}.
+&& + \ \left. \left[ \left. \left[ \sigma_{12} p \right] \right\vert_{x=x_{i-0.5}}^{x=x_{i+0.5}} \right] \right\vert_{y=y_{j-0.5}}^{y=y_{j+0.5}}.
 \end{subeqnarray}
 The FV discretization is then based on the approximation
 \begin{subeqnarray}
 \frac{\partial}{\partial \tau} \overline{p}(x_{i},y_{j},\tau) &\approx& \left. \left[ \frac{\partial}{\partial x} \left( \frac{1}{2} \sigma_{1}^{2} p \right) - \mu_{1}p \right] \right\vert_{x=x_{i-0.5}}^{x=x_{i+0.5}} \frac{2}{\Delta x_{i} + \Delta x_{i+1}} \slabel{eq:FluxX} \\
 && + \ \left. \left[ \frac{\partial}{\partial y} \left( \frac{1}{2} \sigma_{2}^{2} p \right) - \mu_{2}p \right] \right\vert_{y=y_{j-0.5}}^{y=y_{j+0.5}} \frac{2}{\Delta y_{j} + \Delta y_{j+1}} \slabel{eq:FluxY} \\
-&& + \ \left. \left[ \left. \left[ \sigma_{1}\sigma_{2} p \right] \right\vert_{x=x_{i-0.5}}^{x=x_{i+0.5}} \right] \right\vert_{y=y_{j-0.5}}^{y=y_{j+0.5}} \frac{2}{\Delta x_{i} + \Delta x_{i+1}} \frac{2}{\Delta y_{j} + \Delta y_{j+1}} . \slabel{eq:FluxXY}
+&& + \ \left. \left[ \left. \left[ \sigma_{12} p \right] \right\vert_{x=x_{i-0.5}}^{x=x_{i+0.5}} \right] \right\vert_{y=y_{j-0.5}}^{y=y_{j+0.5}} \frac{2}{\Delta x_{i} + \Delta x_{i+1}} \frac{2}{\Delta y_{j} + \Delta y_{j+1}} . \slabel{eq:FluxXY}
 \end{subeqnarray}
 The terms in \eqref{eq:FluxX} and \eqref{eq:FluxY} are fluxes in one spatial dimension at the volume boundaries. The four terms included in \eqref{eq:FluxXY} can be seen as fluxes at the corners of the volume $\Omega_{i,j}$.
+For the ease of presentation, denote by $\boldsymbol{P}(\tau)$ the $m_{1} \times m_{2}$ matrix with entries $\boldsymbol{P}_{i,j}(\tau)$ and let 
+$$P(\tau) = \mathrm{vec}[\boldsymbol{P}(\tau)],$$ 
+where $\mathrm{vec}[\cdot]$ denotes the operator that turns any given matrix into a vector by putting its successive columns below each other.
 For the one-dimensional fluxes we generalise the FV schemes from the one-dimensional case. More precisely, the fluxes in the right hand side of \eqref{eq:FluxX} are discretized at the inner volume boundaries by
 \begin{equation}
 f_{i-0.5,j}(\tau,P(\tau)) = f_{d,i-0.5,j}(\tau,P(\tau)) + f_{a,i-0.5,j}(\tau,P(\tau)), \quad \mathrm{for} \ 2 \le i \le m_{1}, 1 \le j \le m_{2},
@@ -316,8 +323,8 @@ f_{a,i-0.5,j}(\tau,P(\tau)) := \mu_{1,i-0.5,j} \frac{\boldsymbol{P}_{i-1,j}(\tau
 \end{array}
 \end{equation}
 and $\mu_{1,i-0.5,j} = \mu_{1}(x_{i-0.5},y_{j})$, $\sigma_{1,i,j} = \sigma_{1}(x_{i},y_{j})$.
-The spatial derivatives in the $x$-direction are then approximated by 
-$$ \left[ f_{i-0.5,j}(\tau,W(\tau)) - f_{i+0.5,j}(\tau,W(\tau)) \right] \frac{2}{\Delta x_{i}+\Delta x_{i+1}}. $$
+The right-hand side of \eqref{eq:FluxX}, which contains the terms in the $x$-direction, is then approximated by
+$$ \left[ f_{i-0.5,j}(\tau,P(\tau)) - f_{i+0.5,j}(\tau,P(\tau)) \right] \frac{2}{\Delta x_{i}+\Delta x_{i+1}}. $$
 The fluxes in \eqref{eq:FluxY} at the inner volume boundaries are discretized in the same way by
 \begin{equation}
 f_{i,j-0.5}(\tau,P(\tau)) = f_{d,i,j-0.5}(\tau,P(\tau)) + f_{a,i,j-0.5}(\tau,P(\tau)), \quad \mathrm{for} \ 1 \le i \le m_{1}, 2 \le j \le m_{2},
@@ -329,19 +336,20 @@ f_{d,i,j-0.5}(\tau,P(\tau)) := -\left( \tfrac{1}{2} \sigma^{2}_{2,i,j} \boldsymb
 f_{a,i,j-0.5}(\tau,P(\tau)) := \mu_{2,i,j-0.5} \frac{\boldsymbol{P}_{i,j-1}(\tau)+\boldsymbol{P}_{i,j}(\tau)}{2},
 \end{array}
 \end{equation}
-and $\mu_{2,i,j-0.5} = \mu_{2}(x_{i},y_{j-0.5})$, $\sigma_{2,i,j} = \sigma_{2}(x_{i},y_{j})$. The spatial derivatives in the $y$-direction are approximated by
+and $\mu_{2,i,j-0.5} = \mu_{2}(x_{i},y_{j-0.5})$, $\sigma_{2,i,j} = \sigma_{2}(x_{i},y_{j})$. 
+The term \eqref{eq:FluxY} in the $y$-direction is then discretized by
 $$ \left[ f_{i,j-0.5}(\tau,P(\tau)) - f_{i,j+0.5}(\tau,P(\tau)) \right] \frac{2}{\Delta y_{j}+\Delta y_{j+1}}. $$
 The fluxes from \eqref{eq:FluxXY} at the corners of the volumes, stemming from the mixed spatial derivative, are discretized in the following way for $1 \leq i \leq m_{1}+1, 1 \leq j \leq m_{2}$
-\begin{equation} f_{m,i-0.5,j\pm0.5}(\tau,P(\tau)) = \sigma_{1,i-0.5,j\pm0.5}\sigma_{2,i-0.5,j\pm0.5} \frac{\boldsymbol{P}_{i-1,j}(\tau) + \boldsymbol{P}_{i-1,j\pm 1}(\tau)+\boldsymbol{P}_{i,j}(\tau)+\boldsymbol{P}_{i,j\pm 1}(\tau)}{4},  
+\begin{equation} f_{m,i-0.5,j\pm0.5}(\tau,P(\tau)) = \sigma_{12,i-0.5,j\pm0.5} \frac{\boldsymbol{P}_{i-1,j}(\tau) + \boldsymbol{P}_{i-1,j\pm 1}(\tau)+\boldsymbol{P}_{i,j}(\tau)+\boldsymbol{P}_{i,j\pm 1}(\tau)}{4},  
 \label{eq:DiscrMixedDerivative}
 \end{equation}
-where $\sigma_{1,i-0.5,j\pm0.5} = \sigma_{1}(x_{i-0.5},y_{j\pm0.5})$, $\sigma_{2,i-0.5,j\pm0.5} = \sigma_{2}(x_{i-0.5},y_{j\pm0.5})$, and
+where $\sigma_{12,i-0.5,j\pm0.5} = \rho \sigma_{1}(x_{i-0.5},y_{j\pm0.5}) \sigma_{2}(x_{i-0.5},y_{j\pm0.5})$, and
 \begin{equation}
 \boldsymbol{P}_{0,j}(\tau) := \boldsymbol{P}_{1,j}(\tau), \ \boldsymbol{P}_{m_{1}+1,j}(\tau):= \boldsymbol{P}_{m_{1},j}(\tau), \ \boldsymbol{P}_{i,0}(\tau) := \boldsymbol{P}_{i,1}(\tau), \ \boldsymbol{P}_{i,m_{2}+1}(\tau) := \boldsymbol{P}_{i,m_{2}}(\tau),
 \label{eq:BoundaryMixedDerivative}
 \end{equation}
 such that the general formula is naturally extended at the boundaries of the spatial domain.
-The mixed derivative term is then approximated by
+The term \eqref{eq:FluxXY}, corresponding with the mixed spatial derivative, is then approximated by
 $$ \sum_{i_{1},j_{1} = 0}^{1} (-1)^{i_{1}+j_{1}} f_{m,i-0.5 + i_{1},j-0.5+j_{1}} \frac{2}{\Delta x_{i}+\Delta x_{i+1}}\frac{2}{\Delta y_{j}+\Delta y_{j+1}}. $$
 Finally, one ends up with a semidiscrete system which is defined by
 \begin{eqnarray}
@@ -365,23 +373,23 @@ Inserting the right hand side of the PDE \eqref{eq:GeneralForward}, this can be 
 Analogously to the one-dimensional case it is assumed that the boundaries are chosen sufficiently far away from the spot value $(X_{0},Y_{0})$ or that they are defined by a natural truncation of the spatial domain. 
 The condition above is then approximated by
 \begin{eqnarray}
-0 &=& \int_{Y_{\min}}^{Y_{\max}} \left. \left[ \tfrac{\partial}{\partial x} \left(\tfrac{1}{2} \sigma^{2}_{1}p \right) - \mu_{1} p \right]\right\vert_{x=X_{\min}}^{x=X_{\max}} dy \nonumber \\ \nonumber \\
-&& + \ \int_{X_{\min}}^{X_{\max}} \left. \left[ \tfrac{\partial}{\partial y} \left(\tfrac{1}{2} \sigma^{2}_{2}p \right) - \mu_{2} p \right] \right\vert_{y=Y_{\min}}^{y=Y_{\max}} dx \nonumber \\ \nonumber \\
-&& + \ \int_{Y_{\min}}^{Y_{\max}}\int_{X_{\min}}^{X_{\max}} \tfrac{\partial^{2}}{\partial x \partial y} \left( \rho \sigma_{1}\sigma_{2} p \right) dx dy. \label{eq:BC2D}
+0 &=& \int_{y_{\min}}^{y_{\max}} \left. \left[ \tfrac{\partial}{\partial x} \left(\tfrac{1}{2} \sigma^{2}_{1}p \right) - \mu_{1} p \right]\right\vert_{x=x_{\min}}^{x=x_{\max}} dy \nonumber \\ \nonumber \\
+&& + \ \int_{x_{\min}}^{x_{\max}} \left. \left[ \tfrac{\partial}{\partial y} \left(\tfrac{1}{2} \sigma^{2}_{2}p \right) - \mu_{2} p \right] \right\vert_{y=y_{\min}}^{y=y_{\max}} dx \nonumber \\ \nonumber \\
+&& + \ \int_{y_{\min}}^{y_{\max}}\int_{x_{\min}}^{x_{\max}} \tfrac{\partial^{2}}{\partial x \partial y} \left( \sigma_{12} p \right) dx dy. \label{eq:BC2D}
 \end{eqnarray}
 Note that by assuming that
 \begin{equation}
-\sigma_{1}\sigma_{2}p \vert_{x=X_{\min},y=Y_{\min}} = \sigma_{1}\sigma_{2}p \vert_{x=X_{\min},y=Y_{\max}} = \sigma_{1}\sigma_{2}p \vert_{x=X_{\max},y=Y_{\min}} = \sigma_{1}\sigma_{2}p \vert_{x=X_{\max},y=Y_{\max}} =0,
+\sigma_{12}p \vert_{x=x_{\min},y=y_{\min}} = \sigma_{12}p \vert_{x=x_{\min},y=y_{\max}} = \sigma_{12}p \vert_{x=x_{\max},y=y_{\min}} = \sigma_{12}p \vert_{x=x_{\max},y=y_{\max}} =0,
 \label{eq:HoekpuntenNul}
 \end{equation}
 the last integral, corresponding with the mixed derivative term, is always equal to zero.
 Next, we generalise the idea that there are no fluxes at the boundaries, i.e.\ that no mass is coming in or going out at the boundaries.
 In this way the following boundary conditions are imposed
 \begin{eqnarray*}
-\left. \left[ \tfrac{\partial}{\partial x} \left( \tfrac{1}{2} \sigma_{1}^{2}p \right) - \left( \mu_{1} p \right) \right]\right\vert_{x=X_{\min}} &=& 0, \qquad \mathrm{for} \ Y_{\min} \le y \le Y_{\max}, \\\\
-\left. \left[ \tfrac{\partial}{\partial x} \left( \tfrac{1}{2} \sigma_{1}^{2}p \right) - \left( \mu_{1} p \right) \right]\right\vert_{x=X_{\max}} &=& 0, \qquad \mathrm{for} \ Y_{\min} \le y \le Y_{\max}, \\\\
-\left. \left[ \tfrac{\partial}{\partial y} \left( \tfrac{1}{2} \sigma_{2}^{2}p \right) - \left( \mu_{2} p \right) \right]\right\vert_{y=Y_{\min}} &=& 0, \qquad \mathrm{for} \ X_{\min} \le x \le X_{\max}, \\\\
-\left. \left[ \tfrac{\partial}{\partial y} \left( \tfrac{1}{2} \sigma_{2}^{2}p \right) - \left( \mu_{2} p \right) \right]\right\vert_{y=Y_{\max}} &=& 0, \qquad \mathrm{for} \ X_{\min} \le x \le X_{\max}.
+\left. \left[ \tfrac{\partial}{\partial x} \left( \tfrac{1}{2} \sigma_{1}^{2}p \right) - \left( \mu_{1} p \right) \right]\right\vert_{x=x_{\min}} &=& 0, \qquad \mathrm{for} \ y_{\min} \le y \le y_{\max}, \\\\
+\left. \left[ \tfrac{\partial}{\partial x} \left( \tfrac{1}{2} \sigma_{1}^{2}p \right) - \left( \mu_{1} p \right) \right]\right\vert_{x=x_{\max}} &=& 0, \qquad \mathrm{for} \ y_{\min} \le y \le y_{\max}, \\\\
+\left. \left[ \tfrac{\partial}{\partial y} \left( \tfrac{1}{2} \sigma_{2}^{2}p \right) - \left( \mu_{2} p \right) \right]\right\vert_{y=y_{\min}} &=& 0, \qquad \mathrm{for} \ x_{\min} \le x \le x_{\max}, \\\\
+\left. \left[ \tfrac{\partial}{\partial y} \left( \tfrac{1}{2} \sigma_{2}^{2}p \right) - \left( \mu_{2} p \right) \right]\right\vert_{y=y_{\max}} &=& 0, \qquad \mathrm{for} \ x_{\min} \le x \le x_{\max}.
 \end{eqnarray*}
 By combining this boundary conditions with the assumption \eqref{eq:HoekpuntenNul} it follows that condition \eqref{eq:BC2D} is satisfied.
 
@@ -391,12 +399,12 @@ for $1 \leq i \le m_{1}, 1 \le j \le m_{2}$.
 The fluxes stemming from the mixed derivative term, see \eqref{eq:FluxXY}, at the boundaries are discretized by using \eqref{eq:DiscrMixedDerivative} in combination with \eqref{eq:BoundaryMixedDerivative}. 
 The total discretization is then given by \eqref{eq:2DDiscretizationGeneral} for all $1 \le i \le m_{1}, 1 \le j \le m_{2}$.
 It is readily verified that if
-$$ \sigma_{1,1,1} \sigma_{2,1,1} \boldsymbol{P}_{1,1}(\tau) = \sigma_{1,1,m_{2}} \sigma_{2,1,m_{2}} \boldsymbol{P}_{1,m_{2}}(\tau) = \sigma_{1,m_{1},1} \sigma_{2,m_{1},1} \boldsymbol{P}_{m_{1},1}(\tau) = \sigma_{1,m_{1},m_{2}} \sigma_{2,m_{1},m_{2}} \boldsymbol{P}_{m_{1},m_{2}}(\tau)=0, $$
+$$ \sigma_{12,1,1} \boldsymbol{P}_{1,1}(\tau) = \sigma_{12,1,m_{2}} \boldsymbol{P}_{1,m_{2}}(\tau) = \sigma_{12,m_{1},1} \boldsymbol{P}_{m_{1},1}(\tau) = \sigma_{12,m_{1},m_{2}} \boldsymbol{P}_{m_{1},m_{2}}(\tau)=0, $$
 which is the semidiscrete version of \eqref{eq:HoekpuntenNul}, then the property \eqref{eq:ConservationMass2D} holds and the total numerical mass is preserved.
 
 As stated above, some processes are naturally bounded, e.g.\ the general variance process from Section \ref{intro} can never become negative. 
-Suppose for example that the process corresponding with the $y$-variable in the PDE \eqref{eq:GeneralForward} is bounded from below. Then, $Y_{\min}$ is naturally taken equal to this lower boundary. Moreover, it can happen that this lower boundary is attainable (cf. the variance process from Section \ref{intro} with $\beta < 1/2$) and probability mass can stack up at this boundary. This can cause instabilities in the approximation of the mixed derivative term near this boundary. In order to deal with this, if for example the boundary $Y_{\min}$ is attainable, the central FV scheme in the $y$-direction for the "mixed derivative fluxes" \eqref{eq:FluxXY} at $Y_{\min}+\tfrac{1}{2}\Delta y_{1}$ are replaced by a first-order forward scheme. More precisely, the $f_{m,i \pm 0.5, 1.5}(\tau,P(\tau))$ from above are then replaced by
-$$ f_{m,i \pm 0.5, 1.5}(\tau,P(\tau)) =  \sigma_{1,i\pm0.5,1.5}\sigma_{2,i\pm0.5,1.5} \frac{P_{i,2}(\tau)+P_{i \pm 1,2}(\tau)}{2}, $$
+Suppose for example that the process corresponding with the $y$-variable in the PDE \eqref{eq:GeneralForward} is bounded from below. Then, $y_{\min}$ is naturally taken equal to this lower boundary. Moreover, it can happen that this lower boundary is attainable (cf. the variance process from Section \ref{intro} with $\beta < 1/2$) and probability mass can stack up at this boundary. This can cause instabilities in the approximation of the mixed derivative term near this boundary. In order to deal with this, if for example the boundary $y_{\min}$ is attainable, the central FV scheme in the $y$-direction for the "mixed derivative fluxes" \eqref{eq:FluxXY} at $y_{\min}+\tfrac{1}{2}\Delta y_{1}$ are replaced by a first-order forward scheme. More precisely, the $f_{m,i \pm 0.5, 1.5}(\tau,P(\tau))$ from above are then replaced by
+$$ f_{m,i \pm 0.5, 1.5}(\tau,P(\tau)) =  \sigma_{12,i\pm0.5,1.5} \frac{P_{i,2}(\tau)+P_{i \pm 1,2}(\tau)}{2}, $$
 for $1 \leq i \leq m_{1}$, where
 $$ P_{0,2}(\tau) := P_{1,2}(\tau), \quad P_{m_{1}+1,2}(\tau) := P_{m_{1},2}(\tau). $$  
 
@@ -406,7 +414,7 @@ P'(\tau) = A P(\tau),
 \label{eq:ODE2D}
 \end{equation} 
 for $\tau > 0$ and with given matrix $A$. 
-Analogously to the one-dimensional case, since the values $\boldsymbol{P}_{i,j}(\tau)$ can be seen as approximations of the cell averages $\overline{p}(x_{i},y_{j},\tau)$, it is natural to define the initial vector as $P(0) = \mathrm{vec}[\boldsymbol{P}(0)]$ where
+Analogously to the one-dimensional case, since the values $\boldsymbol{P}_{i,j}(\tau)$ are approximations of the cell averages $\overline{p}(x_{i},y_{j},\tau)$, it is natural to define the initial vector as $P(0) = \mathrm{vec}[\boldsymbol{P}(0)]$ where
 $$ \boldsymbol{P}_{i,j}(0) = \left\{ \begin{array}{lll}
 \tfrac{1}{\vert \Omega_{i,j} \vert} & & \mathrm{if} \ (X_{0},V_{0}) \in \Omega_{i,j}, \\ \\
 0 & & \mathrm{else.}
@@ -437,7 +445,7 @@ The exact solution is known analytically and can be written as
 \begin{equation}
 p(s_{1},s_{2},\tau) = n_{2}(\log(s_{1}/S_{1,0}),\log(s_{2}/S_{2,0}),\tau)\frac{1}{s_{1}}\frac{1}{s_{2}}, \qquad \mathrm{for} \ s_{1}>0, s_{2}>0, \tau > 0,
 \end{equation}
-where this time $n_{2}(x,y,\tau)$ is the density function of a two-dimensional normally distributed random variable with mean $\boldsymbol{\mu}$ and covariance matrix $\boldsymbol{\Sigma}$ given by
+where $n_{2}(x,y,\tau)$ is the density function of a two-dimensional normally distributed random variable with mean $\boldsymbol{\mu}$ and covariance matrix $\boldsymbol{\Sigma}$ given by
 $$ \boldsymbol{\mu} = \left[ \begin{array}{c}
 (r - \tfrac{1}{2} \sigma^{2}_{1,BS})\tau \\\\ (r - \tfrac{1}{2} \sigma^{2}_{2,BS})\tau
 \end{array} \right], \qquad
@@ -446,7 +454,7 @@ $$ \boldsymbol{\mu} = \left[ \begin{array}{c}
 \rho \sigma_{1,BS}\sigma_{2,BS}\tau && \sigma^{2}_{2,BS}\tau
 \end{array} \right]. $$
 
-Similarly to the domain truncation in the one-dimensional numerical experiment, the spatial domain is truncated to $[S_{1,\min}, S_{1,\max}] \times [S_{2,\min}, S_{2,\max}] = [0, 30S_{1,0}] \times [0, 30S_{2,0}]$. The Cartesian spatial grid,
+Similarly to the domain truncation in the one-dimensional numerical experiment, the spatial domain is truncated to $[s_{1,\min}, s_{1,\max}] \times [s_{2,\min}, s_{2,\max}] = [0, 30S_{1,0}] \times [0, 30S_{2,0}]$. The Cartesian spatial grid,
 $$ (s_{1,i},s_{2,j}) \qquad \mathrm{for} \ 1 \le i \le m_{1}, 1 \le j \le m_{2}, $$ 
 is constructed by considering the spatial grid from Subsection \ref{subsec:Experiment1D} in both spatial dimension. In Figure \ref{fig:Grid2DBS} this spatial grid is illustrated within the region  $[0, 5S_{1,0}] \times [0, 5S_{2,0}]$ for $S_{1,0} = S_{1,0} = 100$ and $m_{1}, m_{2} = 40$.
 \begin{figure}
@@ -477,7 +485,7 @@ Initially, for low values of $m_{1},m_{2}$, the convergence plot indicates that 
 
 
 
- 
+
 
 
 
